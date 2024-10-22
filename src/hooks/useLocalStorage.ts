@@ -9,8 +9,9 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
       } else {
         return initialValue;
       }
+    } else {
+      return JSON.parse(jsonValue);
     }
-    return JSON.parse(jsonValue);
   });
 
   useEffect(() => {
